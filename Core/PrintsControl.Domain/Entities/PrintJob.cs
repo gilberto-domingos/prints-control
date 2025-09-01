@@ -23,6 +23,9 @@ public class PrintJob : BaseEntity
     {
         if (quantity < 0)
             throw new ArgumentException("A quantidade impressa deve ser maior que zero.");
+            
+       if (student.Balance < dto.Quantity)
+            throw new ArgumentException("Saldo insuficiente!");
         
         _quantity = quantity;
     }
